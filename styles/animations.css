@@ -1,0 +1,16 @@
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content, .project-item, .skill-item, .contact form, .achievements-list {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+

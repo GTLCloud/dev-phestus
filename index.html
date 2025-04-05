@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTL</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- typed cdn script -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+    #loadingMessage {
+        font-size: 18px;
+        color: #4CAF50;
+        margin-top: 10px;
+    }
+        .logo-container h3 i {
+    margin-left: 5px; /* Adds space between GTL and the cloud icon */
+    font-size: 0.9em; /* Adjust the size of the cloud icon if needed */
+}
+ .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    /* Styles for the Verify Email button */
+#verifyEmailButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#verifyEmailButton:hover {
+    background-color: #45a049;
+}    
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px; /* Adjust as needed */
+    margin-right: 5px;
+}
+
+.footer-logo i {
+    margin-left: 5px;
+}
+
+       
+</style>
+
+</head>
+<body>
+    <!-- Navbar -->
+<header class="header">
+    <div class="logo-container">
+       <h3>GTL <i class="fa-solid fa-cloud"></i></h3>
+    </div> 
+    <button class="sidebar-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="#social">Socials</a>
+    </nav>
+    <!-- sidebar -->
+    <div class="sidebar">
+        <button class="sidebar-close" aria-label="Close sidebar">&times;</button>
+        <nav class="sidebar-nav-links">
+            <a href="#hero">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="#social">Socials</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero" class="hero" style="background: url('map-image.jpg') center/cover no-repeat;">
+    <div class="hero-content">
+        <h1>Hi, I'm Phestus</h1>
+        <p>GIS Developer with expertise in
+            <span id="typed-output" class="typed-text"></span>
+        </p>
+        <p>Mapping the Path from Information to Impact</p>
+        <a href="#projects" class="cta-button">View My Work</a>
+    </div>
+</section>
+
+
+<!-- Skills & Expertise Section -->
+<section id="skills" class="skills-section">
+    <div class="container">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-cards">
+            <!-- Geospatial Development -->
+            <div class="skill-card">
+                <div class="card-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3>Geospatial Development</h3>
+                <ul class="skill-list">
+                    <li><span class="bullet-arrow">&#x2192;</span> Web Mapping (Leaflet, MapLibre, OpenLayers)</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> GIS Application Development</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> API Integration (Google Maps, Mapbox)</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Spatial Database Management</li>
+                </ul>
+            </div>
+
+            <!-- Remote Sensing & Image Analysis -->
+            <div class="skill-card">
+                <div class="card-icon">
+                    <i class="fas fa-satellite"></i>
+                </div>
+                <h3>Remote Sensing & Image Analysis</h3>
+                <ul class="skill-list">
+                    <li><span class="bullet-arrow">&#x2192;</span> Satellite Image Processing</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Change detection</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Object-based image analysis</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Land Use/Land Cover Classification</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Machine learning for image classification</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Ground truth data collection</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Google Earth Engine (GEE)</li>
+                </ul>
+            </div>
+
+            <!-- Geospatial Data Science -->
+            <div class="skill-card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-area"></i>
+                </div>
+                <h3>Geospatial Data Science</h3>
+                <ul class="skill-list">
+                    <li><span class="bullet-arrow">&#x2192;</span> Spatial Data Processing (Python, R)</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Machine Learning for GIS</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Spatial Statistics & Modelling</li>
+                    <li><span class="bullet-arrow">&#x2192;</span> Big Data GIS (PostGIS, GeoServer)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   <!-- Projects Section -->
+<section id="projects" class="projects-section">
+        <h2 class="project-header">Projects</h2>
+    <div class="projects-container">
+        <!-- Perfect Storm -->
+        <div class="project-card">
+            <img src="static/PS.png" alt="img">
+            <div class="project-info">
+                <h3>Web Atlas for the Perfect Storm Project </h3>
+                <p>Provides an interactive and accessible platfrom for the visualization of geospatial data for the Perfect Storm project.</p>
+                
+                <a href="#" class="live-preview">Live Preview</a>
+                <a href="#" class="github-link">View on GitHub</a>
+            </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+            <img src="static/gtl-afya.png" alt="img">
+            <div class="project-info">
+                <h3>GTL-Afya</h3>
+                <p>
+                                  
+    A web-based geographic information system (GIS) application that enables visualization, spatial querying, and filtering of geospatial data. 
+ 
+
+                </p>
+                <a href="https://gtl-afya.netlify.app/" class="live-preview">Live Preview</a>
+                <a href="https://github.com/nestah/webgis-frontend" class="github-link">View on GitHub</a>
+            </div>
+        </div>
+        <!-- Project 3-->
+        <div class="project-card">
+            <img src="static/project5.webp" alt="Project 5">
+            <div class="project-info">
+                <h3>Custom-Image Annotation tool</h3>
+                <p>A custom image annotation tool inspired by the labelimg and label studio community </p>
+                <a href="https://labelstud.io/" class="live-preview">Live Preview</a>
+                <a href="https://github.com/nestah/" class="github-link">View on GitHub</a>
+            </div>
+        </div>
+
+        
+</section>
+<!--  Skill tests    -->
+
+    <!-- Contact Section -->
+<section id="contact" class="contact">
+    <h2>Talk to me</h2>
+    <form id="contactForm" action="https://formsubmit.co/f1bb321a7b697bd5d9833d7356e7c180" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" id="emailInput" name="email" placeholder="Your Email" required>
+        <textarea name="msg" placeholder="Your Message" rows="4" required></textarea>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://gtlcloud.github.io/dev-portfolio/thanks.html">
+        <button type="submit" class="submit-button">Send Message</button>
+    </form>
+
+    <!-- Hidden "Sending" message -->
+    <div id="loadingMessage" style="display:none;">
+        Sending your message...
+    </div>
+
+    <!-- Modal for Email Verification -->
+    <div id="emailVerificationModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Email Verification</h2>
+            <p>Please verify your email by logging in with your Google account.</p>
+            <div id="g_id_onload"
+                data-client_id="302958877847-ka3m3se629cfcimbaflc2iknc9q71v0t.apps.googleusercontent.com"
+                data-auto_select="true"
+                data-itp_support="true">
+            </div>
+            <div class="g_id_signin" 
+                data-type="standard"
+                data-shape="rectangular"
+                data-theme="outline"
+                data-text="sign_in_with"
+                data-size="large">
+            </div>
+            <p id="loadingVerifyMessage" style="display: none;">Verifying email, please wait...</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; <span class="footer-logo">GTL <i class="fa-solid fa-cloud"></i></span> <span id="current-year"></span> | All rights reserved.</p>
+      
+        <div class="social-links">
+            <a href="https://github.com/nestah" class="social-link"><i class="fa-brands fa-github"></i></a>
+            <a href="https://stackoverflow.com/users/18680582/phestus" class="social-link"><i class="fa-brands fa-stack-overflow"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/254790851168" id="social" class="social-link" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+    <script src="scripts/animation.js"></script>
+    <script>
+  // Dynamically set the current year
+  document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
+    <!-- <script src="scripts/main.js"></script> -->
+     <!-- sidebar toggle -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarToggle = document.querySelector('.sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const sidebarClose = document.querySelector('.sidebar-close');
+        
+            sidebarToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('open');
+            });
+        
+            sidebarClose.addEventListener('click', function() {
+                sidebar.classList.remove('open');
+            });
+        });
+        </script>
+<!-- Google Identity Services -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script> <!-- JWT Decode Library -->
+
+<script>
+    // Handle form submission and show verification modal
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent immediate form submission
+        document.getElementById('emailVerificationModal').style.display = 'flex'; // Show verification modal
+    });
+
+    // Handle Google Credential Response
+    function handleCredentialResponse(response) {
+        const userEmail = jwt_decode(response.credential).email; // Decode JWT to get user email
+        const enteredEmail = document.getElementById('emailInput').value;
+
+        if (userEmail === enteredEmail) {
+            document.getElementById('loadingVerifyMessage').textContent = 'Verification Complete!';
+            
+            setTimeout(function() {
+                // Store form submission state
+                sessionStorage.setItem('submitted', true);
+                // Hide modal, show loading, and submit form
+                document.getElementById('loadingMessage').style.display = 'block';
+                document.getElementById('emailVerificationModal').style.display = 'none';
+                // Submit the form
+                document.getElementById('contactForm').submit();
+            }, 1500);
+        } else {
+            alert('The email you verified does not match the one you entered.');
+        }
+    }
+
+    // Initialize Google Sign-In Button
+    window.onload = function () {
+        google.accounts.id.initialize({
+            client_id: '302958877847-ka3m3se629cfcimbaflc2iknc9q71v0t.apps.googleusercontent.com',
+            callback: handleCredentialResponse
+        });
+
+        google.accounts.id.renderButton(
+            document.querySelector('.g_id_signin'), {
+                theme: 'outline',
+                size: 'large'
+            }
+        );
+
+        // Check if the form was submitted and redirect if so
+        if (sessionStorage.getItem('submitted') === 'true') {
+            sessionStorage.removeItem('submitted');
+
+            // Redirect to the thanks page after form submission
+            window.location.replace('https://gtlcloud.github.io/dev-portfolio/thanks.html');
+        }
+    };
+</script>
+</body>
+</html>

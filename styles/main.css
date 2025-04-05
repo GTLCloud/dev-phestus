@@ -1,0 +1,485 @@
+/* Custom Styles */
+:root {
+    --primary-color: #063970; /* Changed primary color */
+    --accent-color-1: #e36a2f;
+    --accent-color-2: #2596be; /* Adjusted for contrast */
+    --secondary-accent: #76b5c5;
+    --background-color: #f9f9f9; /* Lightened background */
+    --dark-accent: #2b2b2b;
+    --highlight-accent: #912818;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--dark-accent);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--primary-color); 
+    height: 60px; 
+}
+
+/* Logo styling */
+.logo-container h3 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Navbar links container */
+.nav-links {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar link styling */
+.nav-links a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 15px; /* Add padding for a more clickable area */
+    border-radius: 5px; /* Optional: Round the corners for a smooth look */
+    transition: color 0.3s, background-color 0.3s; /* Add smooth transition */
+}
+
+/* Hover effect for navbar links */
+.nav-links a:hover {
+    color: var(--accent-color-1); /* Retain accent color on hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Subtle background color on hover */
+}
+
+/* start */
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px; /* Adjust as needed */
+    background-color: var(--primary-color);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.sidebar-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-nav-links a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sidebar-nav-links a:hover {
+    color: var(--accent-color-1);
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+.sidebar-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide original nav links on mobile */
+    }
+
+    .sidebar-toggle {
+        display: block; /* Show the toggle button on mobile */
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+}
+/* end */
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 20px; /* Increased padding for better spacing */
+    background: url('/map-image.jpg') center/cover no-repeat;
+    color: #ffffff; /* White text for contrast */
+    position: relative;
+}
+
+/* Overlay for readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+}
+
+/* Ensuring content stays above overlay */
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.typed-text {
+    font-weight: bold;
+    color: #e36a2f; /* Accent color */
+    display: inline; /* Ensure it's inline with the rest of the text */
+}
+
+/* .cta-button {
+    background-color: #e36a2f; 
+    color: #ffffff; 
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+    background-color: #063970; 
+} */
+/* Cursor pointer for interactive elements */
+/* a, .cta-button, .skill-card {
+    cursor: pointer;
+} */
+ /* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 15px;
+    background: #e36a2f; /* Accent color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #c55b27;
+}
+
+/* Example: Specific cursor style for skill cards */
+.skill-card:hover {
+    cursor: pointer;
+}
+
+
+/* Skills Section */
+.skills-section {
+    background-color: #f4f7f9; /* Light gray background for contrast */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #063970; /* Dark blue color for heading */
+    font-weight: bold;
+}
+
+.skills-cards {
+    display: flex;
+    justify-content: center; /* Ensures uniform spacing */
+    gap: 30px; /* Increased gap for better spacing */
+    flex-wrap: wrap; /* Ensures cards wrap properly on smaller screens */
+    padding: 0 20px; /* Added padding for better alignment */
+}
+
+
+.skill-card {
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #e36a2f; /* Accent color for icons */
+    margin-bottom: 20px;
+    background: #fff; /* White background for the icon */
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.skill-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    color: #063970; /* Dark blue color for headings */
+    font-weight: bold;
+}
+
+.skill-list {
+    list-style: none; /* Remove default list style */
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Align text to the left */
+}
+
+.skill-list li {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #333; /* Dark gray color for skill items */
+    position: relative; /* Positioning context for pseudo-element */
+    padding-left: 35px; /* Space for the bullet */
+}
+
+.bullet-arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem; /* Adjust size of the arrow */
+    color: #e36a2f; /* Accent color for bullet */
+}
+
+/* Projects Section */
+.project-header{
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #063970; /* Dark blue color for heading */
+    font-weight: bold;
+    text-align: center;
+}
+.projects-section {
+    background-color: #f4f4f9; /* Light background for contrast */
+    padding: 40px 24px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 24px;
+    justify-content: center;
+}
+
+.project-card {
+    background: #ffffff; /* Card background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img {
+    width: 100%; /* Make image fill the card */
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover image without distortion */
+}
+
+.project-info {
+    padding: 16px;
+}
+
+.project-info h3 {
+    margin: 0 0 8px;
+    color: #333;
+    font-size: 20px;
+}
+
+.project-info p {
+    color: #666;
+    font-size: 16px;
+    margin: 0 0 16px;
+}
+
+.live-preview,
+.github-link {
+    display: inline-block;
+    background-color: #333; /* Dark button color */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin: 4px;
+}
+
+.live-preview {
+    background-color: #4CAF50; /* Green for live preview */
+}
+
+.live-preview:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.github-link:hover {
+    background-color: #e36a2f; /* Accent color for hover effect */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
+/* Achievements Section */
+.achievements {
+    padding: 80px 16px;
+}
+.achievements h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 32px;
+}
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.achievements-list li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+.achievements-list i {
+    color: var(--accent-color-2);
+    margin-right: 8px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 16px;
+}
+.contact h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 32px;
+    color: #063970;
+}
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.contact input, .contact textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.contact textarea {
+    resize: none;
+}
+.submit-button {
+    background-color: var(--accent-color-1);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 24px 16px;
+    text-align: center;
+}
+.social-links {
+    margin-top: 16px;
+}
+.social-links a {
+    color: white;
+    font-size: 24px;
+    margin: 0 8px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: var(--accent-color-1);
+}
