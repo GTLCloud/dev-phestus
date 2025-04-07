@@ -360,6 +360,25 @@ p {
     font-size: 16px;
     margin: 0 0 16px;
 }
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #ff6347; /* Tomato red for visibility */
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 12px;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.project-card {
+    position: relative; /* Required for badge positioning */
+}
+
 
 .live-preview,
 .github-link {
