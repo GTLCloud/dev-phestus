@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var options = {
+
+    // Typed.js
+    new Typed('#typed-output', {
         strings: [
             "Web Development",
             "Data Visualization",
@@ -7,12 +9,35 @@ document.addEventListener('DOMContentLoaded', function () {
             "Remote Sensing",
             "Geospatial Analysis"
         ],
-        typeSpeed: 50, // Speed of typing in milliseconds
-        backSpeed: 25,  // Speed of backspacing in milliseconds
-        backDelay: 1000, // Delay before starting backspacing
-        startDelay: 500, // Delay before typing starts
-        loop: true // Whether to loop the animation
-    };
+        typeSpeed: 50,
+        backSpeed: 25,
+        backDelay: 1000,
+        startDelay: 500,
+        loop: true
+    });
 
-    var typed = new Typed('#typed-output', options);
+    // Navbar scroll effect
+    var header = document.querySelector('.header');
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 60) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Scroll reveal
+    var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function (el) {
+        revealObserver.observe(el);
+    });
+
 });
