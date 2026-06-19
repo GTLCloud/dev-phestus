@@ -196,7 +196,7 @@
         <input type="email" id="emailInput" name="email" placeholder="Your Email" required>
         <textarea name="msg" placeholder="Your Message" rows="5" required></textarea>
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://gtlcloud.github.io/dev-portfolio/thanks.html">
+        <input type="hidden" name="_next" value="https://gtlcloud.github.io/dev-phestus/thanks.html">
         <button type="submit" class="submit-button">Send Message</button>
     </form>
 
@@ -280,7 +280,9 @@
             document.getElementById('loadingVerifyMessage').style.display = 'block';
 
             setTimeout(function () {
-                sessionStorage.setItem('submitted', true);
+                var btn = document.querySelector('.submit-button');
+                btn.disabled = true;
+                btn.textContent = 'Sending...';
                 document.getElementById('loadingMessage').style.display = 'block';
                 document.getElementById('emailVerificationModal').style.display = 'none';
                 document.getElementById('contactForm').submit();
@@ -302,11 +304,6 @@
                 size: 'large'
             }
         );
-
-        if (sessionStorage.getItem('submitted') === 'true') {
-            sessionStorage.removeItem('submitted');
-            window.location.replace('https://gtlcloud.github.io/dev-portfolio/thanks.html');
-        }
     };
 </script>
 
